@@ -19,7 +19,6 @@ class _PaymentMethodsBottomSheetState extends State<PaymentMethodsBottomSheet> {
     } else {
       isPaypal = true;
     }
-
     setState(() {});
   }
 

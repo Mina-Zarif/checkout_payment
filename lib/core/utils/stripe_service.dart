@@ -15,11 +15,9 @@ class StripeService {
     var response = await apiService.post(
       body: paymentIntentInputModel.toJson(),
       contentType: Headers.formUrlEncodedContentType,
-
       url: 'https://api.stripe.com/v1/payment_intents',
       token: ApiKeys.secretKey,
     );
-
     var paymentIntentModel = PaymentIntentModel.fromJson(response.data);
     return paymentIntentModel;
   }
@@ -45,10 +43,10 @@ class StripeService {
       {required PaymentIntentInputModel paymentIntentInputModel}) async {
     var paymentIntentModel = await createPaymentIntent(paymentIntentInputModel);
     var ephemeralKeyModel =
-        await createEphemeralKey(customerId: paymentIntentInputModel.cusomerId);
+        await createEphemeralKey(customerId: paymentIntentInputModel.customerId);
     var initPaymentSheetInputModel = InitPaymentSheetInputModel(
         clientSecret: paymentIntentModel.clientSecret!,
-        customerId: paymentIntentInputModel.cusomerId,
+        customerId: paymentIntentInputModel.customerId,
         ephemeralKeySecret: ephemeralKeyModel.secret!);
     await initPaymentSheet(
         initPaymentSheetInputModel: initPaymentSheetInputModel);
