@@ -19,24 +19,20 @@ class MyCartViewBody extends StatelessWidget {
           const SizedBox(
             height: 18,
           ),
-          Expanded(child: Image.asset('assets/images/basket_image.png')),
-          const SizedBox(
-            height: 25,
+          Expanded(
+            child: Image.asset('assets/images/basket_image.png'),
           ),
+          const SizedBox(height: 25),
           const OrderInfoItem(
             title: 'Order Subtotal',
             value: r'42.97$',
           ),
-          const SizedBox(
-            height: 3,
-          ),
+          const SizedBox(height: 3),
           const OrderInfoItem(
             title: 'Discount',
             value: r'0$',
           ),
-          const SizedBox(
-            height: 3,
-          ),
+          const SizedBox(height: 3),
           const OrderInfoItem(
             title: 'Shipping',
             value: r'8$',
@@ -47,16 +43,13 @@ class MyCartViewBody extends StatelessWidget {
             color: Color(0xffC7C7C7),
           ),
           const TotalPrice(title: 'Total', value: r'$50.97'),
-          const SizedBox(
-            height: 16,
-          ),
+          const SizedBox(height: 16),
           CustomButton(
             text: 'Complete Payment',
             onTap: () {
               // Navigator.of(context).push(MaterialPageRoute(builder: (context) {
               //   return const PaymentDetailsView();
               // }));
-
               showModalBottomSheet(
                   context: context,
                   shape: RoundedRectangleBorder(
@@ -69,9 +62,7 @@ class MyCartViewBody extends StatelessWidget {
                   });
             },
           ),
-          const SizedBox(
-            height: 12,
-          ),
+          const SizedBox(height: 12),
         ],
       ),
     );

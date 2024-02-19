@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:checkout_payment_ui/Features/checkout/data/models/payment_intent_input_model.dart';
 import 'package:checkout_payment_ui/Features/checkout/data/repos/checkout_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 
 part 'payment_state.dart';
 
@@ -19,10 +18,11 @@ class PaymentCubit extends Cubit<PaymentState> {
         paymentIntentInputModel: paymentIntentInputModel);
 
     data.fold(
-      (l) => emit(PaymentFailure(l.errMessage)),
-      (r) => emit(
-        PaymentSuccess(),
-      ),
+    (l) => emit(PaymentFailure(l.errMessage)),
+    (r) =>
+    emit(
+    PaymentSuccess()
+    ),
     );
   }
 

@@ -28,7 +28,6 @@ class CustomButtonBlocConsumer extends StatelessWidget {
             return const ThankYouView();
           }));
         }
-
         if (state is PaymentFailure) {
           Navigator.of(context).pop();
           SnackBar snackBar = SnackBar(content: Text(state.errMessage));
@@ -50,12 +49,12 @@ class CustomButtonBlocConsumer extends StatelessWidget {
       },
     );
   }
-
+  // execute
   void excuteStripePayment(BuildContext context) {
     PaymentIntentInputModel paymentIntentInputModel = PaymentIntentInputModel(
       amount: '100',
       currency: 'USD',
-      cusomerId: 'cus_Onu3Wcrzhehlez',
+      cusomerId: 'cus_PaoWrifzyrbrnC',
     );
     BlocProvider.of<PaymentCubit>(context)
         .makePayment(paymentIntentInputModel: paymentIntentInputModel);
